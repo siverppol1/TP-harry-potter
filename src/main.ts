@@ -15,6 +15,8 @@ import {
 
 import { WizardRepository, SpellRepository } from "./repository";
 import { Log } from "./decorators";
+import { NewWizard } from "./types";
+import { saveWizard } from "./service";
 
 function isHouse(value: unknown): value is House {
   return (
@@ -178,3 +180,9 @@ const typeExamples: [
 ] | null = null;
 
 void typeExamples;
+
+const testWizard:NewWizard={name:"harry",house:"Gryffindor",level:3,active:true};
+const theFinalTest=saveWizard(testWizard);
+console.log(theFinalTest);
+
+
