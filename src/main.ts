@@ -181,8 +181,14 @@ const typeExamples: [
 
 void typeExamples;
 
+
+//test ex 1 
 const testWizard:NewWizard={name:"harry",house:"Gryffindor",level:3,active:true};
 const theFinalTest=saveWizard(testWizard);
 console.log(theFinalTest);
+
+//test ex 2
+const theGryffondors=wizards.findByHouse("Gryffindor");
+console.log(theGryffondors);
 
 
