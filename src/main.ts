@@ -11,11 +11,13 @@ import {
   type WizardUpdate,
   type AttackSpell,
   type NonHealingCategory,
+  
 } from "./types";
 
 import { WizardRepository, SpellRepository } from "./repository";
 import { Log } from "./decorators";
-import { NewWizard } from "./types";
+import type{SpellCastEvent} from "./types";
+import { NewWizard} from "./types";
 import { saveWizard } from "./service";
 
 function isHouse(value: unknown): value is House {
@@ -190,5 +192,16 @@ console.log(theFinalTest);
 //test ex 2
 const theGryffondors=wizards.findByHouse("Gryffindor");
 console.log(theGryffondors);
+
+//ex 3
+function handleSpellCast(event:SpellCastEvent):void{
+  console.log(`Wizard ${event.wizardId} cast ${event.spellName}`);
+}
+
+handleSpellCast({
+  type:"spell-cast",
+  wizardId:1,
+  spellName:"Expelliarmus"});
+
 
 
